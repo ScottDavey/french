@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+}
+
+html, body {
+    background-color: #222222;
+    color: #A4A9AD;
+    font-family: Montserrat, Verdana, Arial, sans-serif;
+    font-size: 14pt;
+}
+
+#wrapper {
+    width: 1800px;
+    margin: 50px auto 0px auto;
+    padding: 30px;
+    display: flex;
+}
+
+hr {
+    width: 76%;
+    height: 1px;
+    margin: 20px auto 25px 0px;
+    background-color: #EF5B5B;
+    border: none;
+}
+
+.pageSide.left {
+    width: 600px;
+    padding-right: 50px;
+    margin-left: 0px;
+}
+
+.pageSide.right {
+    width: 1150px;
+}
+
+.pageSide header h1 {
+    font-size: 30pt;
+}
+
+.pageSide.left .configuration {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.pageSide.left .configuration label {
+    margin-right: 10px;
+}
+
+.pageSide.left .configuration .textInput {
+    width: 50px;
+    padding: 10px 7px;
+    background-color: #A4A9AD;
+    color: #23001E;
+    border: 1px solid #A4A9AD;
+    text-align: right;
+    font-size: 14pt;
+}
+
+.pageSide.left #buttonSection {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.pageSide.left #buttonSection .btn {
+    width: 532px;
+    background-color: #FFBA49;
+    color: #23001E;
+    padding: 50px 0px;
+    font-size: 25pt;
+}
+
+.pageSide.left #buttonSection .btn:hover {
+    background-color: #fdc56a;
+    cursor: pointer;
+}
+
+.pageSide.left .practiceArea {
+    width: 100%;
+}
+
+.pageSide.left .practiceArea #sentenceTextArea {
+    width: 530px;
+    height: 200px;
+    padding: 12px;
+    background-color: #A4A9AD;
+    color: #23001E;
+    border: 1px solid #A4A9AD;
+    font-size: 14pt;
+    box-sizing: border-box;
+}
+
+.pageSide.right {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.pageSide.right .component {
+    width: 300px;
+    margin: 0px 10px 10px 0px;
+    color: #23001E;
+}
+
+.pageSide.right .component.long {
+    width: 475px;
+}
+
+.pageSide.right .component .topBar {
+    display: flex;
+    width: 100%;
+    border-bottom: 4px solid #23001E;
+}
+
+.pageSide.right .component .topBar .type {
+    width: 75px;
+    background-color: #EF5B5B;
+    color: #23001E;
+    border-right: 1px solid #23001E;
+    padding: 5px 7px;
+    font-weight: bold;
+}
+
+.pageSide.right .component .topBar .group {
+    width: 100%;
+    background-color: #ef5b5b83;
+    color: #23001E;
+    text-align: right !important;
+    padding: 8px 7px 0px 0px;
+    font-size: 12pt;
+}
+
+.pageSide.right .component .mid {
+    width: 100%;
+    background-color: #ffb949af;
+    padding: 10px 5px 10px 5px;
+    box-sizing: border-box;
+}
+
+.pageSide.right .component .mid .fr {
+    width: 100%;
+    font-size: 18pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.pageSide.right .component .mid .en {
+    width: 100%;
+    font-style: italic;
+}
+
+.pageSide.right .component .bottomBar {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #20a39faf;
+    color: #23001E;
+    font-size: 10pt;
+    font-style: italic;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	<link rel="stylesheet" href="styles.css" />
+
+    <script type="text/javascript" language="javascript" src="words.js"></script>
+    <script type="text/javascript" language="javascript" src="verbs.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts.js"></script>
+</head>
+<body onload="main();">
+
+    <div id="wrapper">
+
+        <section class="pageSide left">
+
+            <header>
+                <h1>PRATIQUE DU FRANÇAIS !</h1>
+
+                <hr />
+            </header>
+    
+            <section class="configuration">
+
+                <div class="row">
+                    <label for="wordNumberInput">NUMBER OF WORDS:</label>
+                    <input type="text" id="wordNumberInput" class="textInput" value="10" />
+                </div>
+
+            </section>
+
+            <section id="buttonSection">
+
+                <input type="button" id="randomBtn" class="btn" value="MOTS ALÉATOIRES" />
+
+            </section>
+
+            <section class="practiceArea">
+                <textarea id="sentenceTextArea" maxlength="5000"></textarea>
+            </section>
+        
+        </section>
+        
+        <section class="pageSide right">
+            &nbsp;
+            <!-- Added through script -->
+        </section>
+
+    </div>
+
+</body>
+</html>
