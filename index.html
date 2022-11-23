@@ -15,9 +15,8 @@
         <section class="pageSide left">
 
             <header>
-                <h1>PRATIQUE DU FRANÇAIS !</h1>
-
-                <hr />
+                <h1>AMÉLIORER LE FRANÇAIS !</h1>
+                <h3>Composer des phrases intéressantes</h3>
             </header>
     
             <section class="configuration">
@@ -25,6 +24,8 @@
                 <div class="row">
                     <label for="wordNumberInput">NUMBER OF WORDS:</label>
                     <input type="text" id="wordNumberInput" class="textInput" value="10" />
+                    &nbsp;&nbsp;
+                    <span id="errorMsg">Nombre est trop élevé !</span>
                 </div>
 
             </section>
@@ -37,6 +38,7 @@
 
             <section class="practiceArea">
                 <textarea id="sentenceTextArea" maxlength="5000"></textarea>
+                <div class="sentenceHint">Écrivez une phrase en utilisant des mot aléatoires</div>
             </section>
         
         </section>
