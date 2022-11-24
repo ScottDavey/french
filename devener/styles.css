@@ -1,0 +1,217 @@
+* {
+    padding: 0;
+}
+
+html, body {
+    background-color: #FFD369;
+    color: #222831;
+    font-family: Montserrat, Verdana, Arial, sans-serif;
+    font-size: 14pt;
+}
+
+#wrapper {
+    width: 1200px;
+    margin: 150px auto 0px auto;
+    padding: 30px;
+}
+
+#wrapper header h1 {
+    font-size: 30pt;
+    margin-top: 0;
+    text-align: center;
+}
+
+#wrapper .pageSide.left {
+    width: 40%;
+}
+
+#wrapper .pageSide.right {
+    width: 60%;
+}
+
+#wrapper #sectionWrapper {
+    display: flex;
+}
+
+#wrapper .pageSide.left .row {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#wrapper .pageSide.left .startNextButtons {
+    width: 100%;
+    padding: 50px 0px;
+    text-align: center;
+    font-size: 40pt;
+    border: none;
+    background-color: #00ADB5;
+    color: #222831;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#wrapper .pageSide.left .startNextButtons:hover {
+    background-color: #04e8f4;
+    color: #1b1f26;
+}
+
+#wrapper .pageSide.left #nextButton {
+    display: none;
+}
+
+#wrapper .pageSide.left #resetButton {
+    width: 100%;
+    padding: 25px 0px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    background-color: #222831;
+    color: #00ADB5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#wrapper .pageSide.left #resetButton:hover {
+    background-color: #2f3844;
+    color: #05dae5;
+}
+
+#wrapper .pageSide.left #gameScore {
+    width: 100%;
+    text-align: center;
+    font-size: 75px;
+}
+
+#wrapper .pageSide.left #gameScore .score {
+    padding: 0px 20px;
+}
+
+#wrapper .pageSide.right #wordSection {
+    width: 75%;
+    margin: 0px auto 10px auto;
+    background-color: #393E46;
+    border-radius: 5px;
+}
+
+#wrapper .pageSide.right #wordSection #topBar {
+    display: flex;
+    width: 100%;
+    border-bottom: 4px solid #FFD369;
+}
+
+#wrapper .pageSide.right #wordSection #topBar #type {
+    width: 75px;
+    background-color: #04e8f4;
+    padding: 5px 7px;
+    border-radius: 4px 0px 0px 0px;
+    border-right: 4px solid #FFD369;
+}
+
+#wrapper .pageSide.right #wordSection #topBar #group {
+    width: 100%;
+    background-color: #04e8f466;
+    padding: 8px 10px 0px 0px;
+    text-align: right;
+    border-radius: 0px 5px 0px 0px;
+    box-sizing: border-box;
+    font-size: 12pt;
+    font-style: italic;
+}
+
+#wrapper .pageSide.right #wordSection #mid {
+    width: 100%;
+    text-align: center;
+}
+
+#wrapper .pageSide.right #wordSection #mid #userInput {
+    width: 100%;
+    padding: 15px 0px;
+}
+
+#wrapper .pageSide.right #wordSection #mid #userInput #inputField {
+    width: 65%;
+    padding: 15px;
+    background-color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    color: #222831;
+    font-size: 30pt;
+    text-align: center;
+}
+
+#wrapper .pageSide.right #wordSection #mid #clueText {
+    width: 65%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    font-size: 18pt;
+    color: #04e8f4;
+}
+
+#wrapper .pageSide.right #wordSection #bottomBar {
+    width: 100%;
+    padding: 5px 0px 5px 5px;
+    box-sizing: border-box;
+    background-color: #FFD369AA;
+    color: #393E46;
+    border-radius: 0px 0px 5px 5px;
+    border-top: 4px solid #FFD369;
+    font-size: 10pt;
+    font-style: italic;
+    display: none;
+}
+
+#wrapper .pageSide.right #hintSection {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#wrapper .pageSide.right #hintSection #hintButton {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;    
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: none;
+    background-color: #EEEEEE;
+    color: #222831;
+    font-size: 15pt;
+    cursor: pointer;
+}
+
+#wrapper .pageSide.right #hintSection #hintButton:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+#wrapper .pageSide.right #hintSection #hintText {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 0px;
+    background-color: #f9cc64;
+    color: #f8e4b6;
+    font-size: 10pt;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+#wrapper .pageSide.right #altCodes {
+    width: 75%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper .pageSide.right #altCodes .code {
+    width: 35px;
+    margin: 0px 3px;
+    padding: 5px 0px;
+    font-size: 16pt;
+    text-align: center;
+    border: 1px solid #222831;
+    cursor: pointer;
+}
+
+#wrapper .pageSide.right #altCodes .code:hover {
+    background-color: #f8e3b0;
+    box-shadow: 0px 0px 5px #564724;
+}

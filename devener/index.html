@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+	<link rel="stylesheet" href="styles.css" />
+
+    <script type="text/javascript" language="javascript" src="../words.js"></script>
+    <script type="text/javascript" language="javascript" src="../verbs.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts.js"></script>
+</head>
+<body onload="main();">
+
+    <div id="wrapper">
+
+        <!-- header -->
+        <header>
+            <h1>DEVINEZ LE MOT FRANÇAIS !</h1>
+        </header>
+
+        <div id="sectionWrapper">
+
+            <section class="pageSide left">
+
+                <section class="row">
+                    <input type="button" class="startNextButtons" id="startButton" value="DEBUT" />
+                    <input type="button" class="startNextButtons" id="nextButton" value="PROCHAINE" />
+                </section>
+
+                <section class="row">
+                    <input type="button" id="resetButton" value="RÉINITIALISER" />
+                </section>
+
+                <section id="gameScore" class="row">
+                    <span id="playerGuesses" class="score">0</span>
+                    /
+                    <span id="totalWords" class="score">0</span>
+                </section>
+
+            </section>
+
+            <section class="pageSide right">
+
+                <section id="wordSection">
+
+                    <div id="topBar">
+
+                        <div id="type">&nbsp;</div>
+                        
+                        <div id="group">&nbsp;</div>
+
+                    </div>
+
+                    <div id="mid">
+
+                        <div id="userInput">
+                            <input type="hidden" id="answer" value="" />
+                            <input type="text" id="inputField" value="" />
+                        </div>
+
+                        <div id="clueText">
+                            &nbsp;
+                        </div>
+
+                    </div>
+
+                    <div id="bottomBar">*notez la forme au pluriel</div>
+
+                </section>
+
+                <section id="altCodes">
+                    <div class="code" alt="Alt + 0224" title="Alt + 0224">À</div>
+                    <div class="code" alt="Alt + 0226" title="Alt + 0226">Â</div>
+                    <div class="code" alt="Alt + 0231" title="Alt + 0231">Ç</div>
+                    <div class="code" alt="Alt + 0233" title="Alt + 0233">É</div>
+                    <div class="code" alt="Alt + 0232" title="Alt + 0232">È</div>
+                    <div class="code" alt="Alt + 0234" title="Alt + 0234">Ê</div>
+                    <div class="code" alt="Alt + 0235" title="Alt + 0235">Ë</div>
+                    <div class="code" alt="Alt + 0239" title="Alt + 0239">Ï</div>
+                    <div class="code" alt="Alt + 0238" title="Alt + 0238">Î</div>
+                    <div class="code" alt="Alt + 0244" title="Alt + 0244">Ô</div>
+                    <div class="code" alt="Alt + 0249" title="Alt + 0249">Ù</div>
+                    <div class="code" alt="Alt + 0251" title="Alt + 0251">Û</div>
+                    <div class="code" alt="Alt + 0252" title="Alt + 0252">Ü</div>
+                </section>
+
+                <section id="hintSection">
+
+                    <input type="button" id="hintButton" value="💡 INDICE" />
+                    <div id="hintText">une cigarette</div>
+
+                </section>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

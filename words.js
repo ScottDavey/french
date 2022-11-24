@@ -25,7 +25,7 @@ const words = [
         gender: `féminin`,
     },
     {
-        fr: `un journal, dex journaux`,
+        fr: `un journal, des journaux`,
         en: `(news)paper, journal (ex: trip), record (ex: events)`,
         gender: `masculin`,
         note: `notez la forme au pluriel`,
@@ -133,7 +133,7 @@ const words = [
     {
         fr: `une nourriture`,
         en: `food`,
-        gender: `masculin`,
+        gender: `féminin`,
         note: `toujours singulier`,
     },
     {
@@ -375,4 +375,10 @@ const words = [
         en: `car, automobile, coach (ex: train), carriage`,
         gender: `féminin`,
     },
+    {
+        fr: `sinon`,
+        en: `or, otherwise, if-not`,
+        gender: `neutre`,
+        note: `contraction`,
+    }
 ];

@@ -5,6 +5,11 @@ const verbs = [
         group: `Première (ER)`,
     },
     {
+        fr: `Améliorer`,
+        en: `To improve, advance, get better, enhance`,
+        group: `Première (ER)`,
+    },
+    {
         fr: `Apporter`,
         en: `To bring, to cause (for example: a change), to bring about`,
         group: `Première (ER)`,
