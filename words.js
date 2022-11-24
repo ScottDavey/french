@@ -25,21 +25,31 @@ const words = [
         gender: `féminin`,
     },
     {
-        fr: `un journal, des journaux`,
+        fr: `un journal`,
         en: `(news)paper, journal (ex: trip), record (ex: events)`,
         gender: `masculin`,
-        note: `notez la forme au pluriel`,
     },
     {
-        fr: `un journal télévisé, des journaux télévisés`,
-        en: `television news`,
+        fr: `des journaux`,
+        en: `(news)papers, journals (ex: trip), records (ex: events)`,
         gender: `masculin`,
         note: `notez la forme au pluriel`,
     },
     {
-        fr: `une télé (familier)`,
+        fr: `un journal télévisé`,
+        en: `television news`,
+        gender: `masculin`,
+    },
+    {
+        fr: `des journaux télévisés`,
+        en: `television news' (pluriel)`,
+        gender: `masculin`,
+        note: `notez la forme au pluriel`,
+    },
+    {
+        fr: `une télé`,
         en: `T.V., telly, 'the box'`,
-        gender: `féminin`,
+        gender: `féminin (familier)`,
     },
     {
         fr: `une télévision`,
@@ -52,20 +62,36 @@ const words = [
         gender: `masculin`,
     },
     {
-        fr: `un, une avant-midi`,
+        fr: `un avant-midi`,
         en: `morning, forenoon`,
-        gender: `masculin ou féminin`,
-        note: `le nom << avant-midi >> est invariable au pluriel`,
+        gender: `masculin`,
+        note: `C'est invariable au pluriel`,
     },
     {
-        fr: `une demi-heure, des demi-heures`,
+        fr: `une avant-midi`,
+        en: `morning, forenoon`,
+        gender: `féminin`,
+        note: `C'est invariable au pluriel`,
+    },
+    {
+        fr: `une demi-heure`,
         en: `half hour, half an hour`,
+        gender: `féminin`,
+    },
+    {
+        fr: `des demi-heures`,
+        en: `half hours`,
         gender: `féminin`,
         note: `notez la forme au pluriel`,
     },
     {
-        fr: `une demi-journée, des demi-journées`,
+        fr: `une demi-journée`,
         en: `half (a) day`,
+        gender: `féminin`,
+    },
+    {
+        fr: `des demi-journées`,
+        en: `half days`,
         gender: `féminin`,
         note: `notez la forme au pluriel`,
     },
@@ -82,7 +108,7 @@ const words = [
     {
         fr: `une nuit`,
         en: `night`,
-        gender: `masculin`,
+        gender: `féminin`,
     },
     {
         fr: `une second`,
@@ -143,8 +169,13 @@ const words = [
         note: `toujours singulier`,
     },
     {
-        fr: `un petit déjeuner, des petits déjeuners`,
+        fr: `un petit déjeuner`,
         en: `breakfast(s) (in France)`,
+        gender: `masculin`,
+    },
+    {
+        fr: `des petits déjeuners`,
+        en: `breakfasts (in France)`,
         gender: `masculin`,
         note: `notez la forme au pluriel`,
     },
@@ -180,8 +211,13 @@ const words = [
         gender: `masculin`,
     },
     {
-        fr: `un bureau, des bureaux`,
-        en: `office(s), study (at home), desk(s) (furniture)`,
+        fr: `un bureau`,
+        en: `office, study (at home), desk (furniture)`,
+        gender: `masculin`,
+    },
+    {
+        fr: `des bureaux`,
+        en: `offices, studies (at home), desks (furniture)`,
         gender: `masculin`,
         note: `notez la forme au pluriel`,
     },
@@ -207,7 +243,12 @@ const words = [
         gender: `féminin`,
     },
     {
-        fr: `une société d'État, des société d'État`,
+        fr: `une société d'État`,
+        en: `crown corporation`,
+        gender: `féminin`,
+    },
+    {
+        fr: `des société d'État`,
         en: `crown corporation(s)`,
         gender: `féminin`,
         note: `notez la forme au pluriel`,
@@ -236,7 +277,7 @@ const words = [
         fr: `un autobus`,
         en: `bus`,
         gender: `masculin`,
-        note: `les noms << autobus >> est invariable au pluriel`,
+        note: `C'est invariable au pluriel`,
     },
     {
         fr: `un besoin`,
@@ -299,7 +340,12 @@ const words = [
         gender: `féminin`,
     },
     {
-        fr: `une eau, des eaux`,
+        fr: `une eau`,
+        en: `water`,
+        gender: `féminin`,
+    },
+    {
+        fr: `des eaux`,
         en: `water(s)`,
         gender: `féminin`,
         note: `notez la forme au pluriel`,
@@ -358,7 +404,7 @@ const words = [
         fr: `un réveille-matin`,
         en: `alarm clock`,
         gender: `masculin`,
-        note: `les noms << réveille-matin >> est invariable au pluriel`,
+        note: `C'est invariable au pluriel`,
     },
     {
         fr: `un robot`,
@@ -380,5 +426,331 @@ const words = [
         en: `or, otherwise, if-not`,
         gender: `neutre`,
         note: `contraction`,
-    }
+    },
+    {
+        fr: `À cette heure-là`,
+        en: `At that hour`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Cet avant-midi`,
+        en: `This morning`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Chaque fois que`,
+        en: `Every time, each time, whenever`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `mi-mars`,
+        en: `mid-March`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Dans l'avant-midi`,
+        en: `In the morning, in the forenoon`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `En même temps`,
+        en: `At the same time`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Le matin`,
+        en: `In the morning`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Le midi`,
+        en: `At lunch time`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Le soir`,
+        en: `In the evening(s)`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Tous les jours`,
+        en: `Every day`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Tous les matin de la semaine`,
+        en: `Every week day morning`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `Toute la journée`,
+        en: `All day (long), the whole day, the entire day`,
+        gender: `Expression Utile`,
+    },
+    {
+        fr: `C'est une bonne question`,
+        en: `That's a good question`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Comment est`,
+        en: `How is...?`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `De fait`,
+        en: `In fact`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `et puis`,
+        en: `...And then?`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Hélas`,
+        en: `Alas!`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Je n'en puis pas certain`,
+        en: `I'm not sure, I'm not certain (about this, about that)`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `J'en suis certain`,
+        en: `I am sure, I am certain of it`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Je présume`,
+        en: `I presume`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `On se tutoie`,
+        en: `Is it alright if we address each other as "tu"? Shall we address each other as "tu"?`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Pourquoi pas`,
+        en: `Why not?`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Si`,
+        en: `Yes! (when refuting a statement in the negative form)`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `Vous avez besoin d'aide`,
+        en: `Do you need help?`,
+        gender: `S'informer, Répondre`,
+    },
+    {
+        fr: `À pied`,
+        en: `On foot`,
+        gender: `Mode de transport`,
+    },
+    {
+        fr: `En voiture`,
+        en: `By car`,
+        gender: `Mode de transport`,
+    },
+    {
+        fr: `Prendre l'autobus`,
+        en: `To take the bus`,
+        gender: `Mode de transport`,
+    },
+    {
+        fr: `Je me brosse les dents`,
+        en: `I brush my teeth, I am brushing my teeth`,
+        gender: `Activité courante`,
+    },
+    {
+        fr: `Je ne fais pas grand-chose`,
+        en: `I'm not doing much, I don't do (ver) much`,
+        gender: `Activité courante`,
+    },
+    {
+        fr: `Avoire lieu`,
+        en: `To take place`,
+        gender: `Expression`,
+    },
+    {
+        fr: `Au lieu`,
+        en: `Instead, in place of`,
+        gender: `Expression`,
+    },
+    {
+        fr: `Être de retour`,
+        en: `To be back (again), to return`,
+        gender: `Expression`,
+    },
+    {
+        fr: `Il y a`,
+        en: `There is, there are`,
+        gender: `Expression`,
+    },
+    {
+        fr: `C'est en pleine débâcle`,
+        en: `It is on the rocks`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Ça nous fait de la peine`,
+        en: `It's upsetting, it's distressing`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Je m'enlise dans la routine`,
+        en: `I'm in a terrible rut`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Je n'en ai pas la moindre idée`,
+        en: `I don't have a clue, I have no idea`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Je n'en peux plus`,
+        en: `I've had it!`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Quelle vie de chien`,
+        en: `It's a dog's life!`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Tourner en rond`,
+        en: `To go around in circles, Going in circles`,
+        gender: `Expression Idiomatique`,
+    },
+    {
+        fr: `Un coup de fil`,
+        en: `Phone call`,
+        gender: `Expression`,
+    },
+    {
+        fr: `Des coups de fil`,
+        en: `Phone calls`,
+        gender: `Expression`,
+        note: `notez la forme au pluriel`,
+    },
+    {
+        fr: `Emplois de temps`,
+        en: `Schedule`,
+        gender: `Expression`,
+    },
+    {
+        fr: `Emplois de temps très chargé`,
+        en: `A very busy schedule`,
+        gender: `Expression`,
+    },
+    {
+        fr: `Je n'y vois pas de problème`,
+        en: `I don't see a problem (with it/that)`,
+        gender: `Expression`,
+    },
+    {
+        fr: `L'aube`,
+        en: `The dawn`,
+        gender: `Expression de temps (féminin)`,
+    },
+    {
+        fr: `L'aurore`,
+        en: `The dawn, daybreak, break of day`,
+        gender: `Expression de temps (féminin)`,
+    },
+    {
+        fr: `La brunante`,
+        en: `The dusk, twilight (Canada)`,
+        gender: `Expression de temps (féminin)`,
+    },
+    {
+        fr: `La nuit tombante`,
+        en: `Nightfall, dusk`,
+        gender: `Expression de temps (féminin)`,
+    },
+    {
+        fr: `Tôt`,
+        en: `Early`,
+        gender: `Adverb`,
+    },
+    {
+        fr: `Tard`,
+        en: `Late`,
+        gender: `Adverb`,
+    },
+    {
+        fr: `Dernier`,
+        en: `Last, final`,
+        gender: `Adjectif (masculin)`,
+    },
+    {
+        fr: `Dernière`,
+        en: `Last, final`,
+        gender: `Adjectif (féminin)`,
+    },
+    {
+        fr: `Passé`,
+        en: `Last, past`,
+        gender: `Adjectif (masculin)`,
+    },
+    {
+        fr: `Passée`,
+        en: `Last, past`,
+        gender: `Adjectif (féminin)`,
+    },
+    {
+        fr: `Prochain`,
+        en: `Next`,
+        gender: `Adjectif (masculin)`,
+    },
+    {
+        fr: `Prochaine`,
+        en: `Next`,
+        gender: `Adjectif (féminin)`,
+    },
+    {
+        fr: `Parfois`,
+        en: `Sometimes, at times`,
+        gender: `neutre`,
+    },
+    {
+        fr: `Par contre`,
+        en: `In contrast, on the other hand`,
+        gender: `neutre`,
+    },
+    {
+        fr: `Quand même`,
+        en: `Still, but still, even so, all the same, regardless`,
+        gender: `neutre`,
+    },
+    {
+        fr: `À la moitié`,
+        en: `To half, at the half, half-way`,
+        gender: `neutre`,
+    },
+    {
+        fr: `Copain`,
+        en: `Friend, buddy, mate, boyfriend`,
+        gender: `masculin`,
+    },
+    {
+        fr: `Copine`,
+        en: `Friend, buddy, mate, girlfriend`,
+        gender: `féminin`,
+    },
+    {
+        fr: `Congé`,
+        en: `Leave, vacation, holiday`,
+        gender: `masculin`,
+    },
+    {
+        fr: `Quotidien`,
+        en: `Daily, everyday, day-to-day`,
+        gender: `masculin`,
+    },
 ];

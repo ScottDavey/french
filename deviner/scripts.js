@@ -1,3 +1,6 @@
+//GLOBAL (bad)
+let WORD_LIST = [];
+
 function rando(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -5,6 +8,27 @@ function rando(min, max) {
 function start(startButton, hintButton) {
     startButton.style.display = 'none';
     hintButton.style.display = 'inline';
+
+    // populate our word list
+    // Add verbs
+    for (const v of verbs) {
+        WORD_LIST.push(
+            {
+                wordType: 'VERB',
+                ...v,
+            }
+        );
+    }
+
+    // Add words
+    for (const w of words) {
+        WORD_LIST.push(
+            {
+                wordType: 'MOT',
+                ...w,
+            }
+        );
+    }
 
     next();
 }
@@ -25,27 +49,26 @@ function next() {
     playerGuesses.style.textDecoration = 'none';
     playerGuesses.style.color = '#222831';
 
-    // find a random word and set up the word section:
-    //      Because we have two files (verbs and words), we have to get fancy
-    //      First we'll get a random number between 1 and 100.
-    //      If the number is even, choose a word. If it's odd, choose a verb
-    //      Next choose another random number between 0 and the len of the chosen type options
-    //      Lastly, choose the work and set up the Word Section
-    const randomTypeVal = rando(1, 100);
-    const wordType = (randomTypeVal % 2 === 0) ? 'VERB' : 'MOT';
-    const wordList = (wordType === 'VERB') ? verbs : words;
-    const randomVal = rando(0, (wordList.length) - 1);
-    const randomWord = wordList[randomVal];
+    // Find a random word and set up the work selection:
+    //      pick a random number between 0 and the total 
+    //      length of the WORD_LIST array.
+    //      After getting a random word, we'll remove it from the WORD_LIST
+
+    // Get a random number, then word
+    const randomWordNum = rando(0, (WORD_LIST.length - 1));
+    const randomWord = WORD_LIST[randomWordNum];
+    // Remove word from WORD_LIST
+    WORD_LIST = WORD_LIST.filter((curVal, i) => i !== randomWordNum);
     
     // Get all our elements and populate
-    document.querySelector('#wordSection #topBar #type').innerHTML = wordType;
-    document.querySelector('#wordSection #topBar #group').innerHTML = (wordType === 'VERB') ? randomWord.group : randomWord.gender;
+    document.querySelector('#wordSection #topBar #type').innerHTML = randomWord.wordType;
+    document.querySelector('#wordSection #topBar #group').innerHTML = (randomWord.wordType === 'VERB') ? randomWord.group : randomWord.gender;
     document.querySelector('#wordSection #mid #clueText').innerHTML = randomWord.en;
-    document.querySelector('#wordSection #userInput #answer').value = randomWord.fr;
+    document.querySelector('#wordSection #userInput #answer').value = randomWord.fr.trim();
 
     const bottomBar = document.querySelector('#wordSection #bottomBar');
 
-    if (wordType === 'MOT' && randomWord.note) {
+    if (randomWord.wordType === 'MOT' && randomWord.note) {
         bottomBar.style.display = 'block';
         bottomBar.innerHTML = randomWord.note;
     } else {
@@ -56,7 +79,7 @@ function next() {
 
 function validate() {
     const inputFieldEl = document.querySelector('#wordSection #userInput #inputField');
-    const inputFieldVal = inputFieldEl.value;
+    const inputFieldVal = inputFieldEl.value.trim();
     const answer = document.querySelector('#wordSection #userInput #answer').value;
 
     if (inputFieldVal.toLowerCase() === answer.toLowerCase()) {
@@ -97,6 +120,9 @@ function reset(startButton, hintButton) {
 
     // Reset hint
     document.querySelector('#hasUsedHint').value = 0;
+
+    // Clear previous answer
+    document.querySelector('#wordSection #userInput #inputField').value = '';
 
     // clear word section
     document.querySelector('#wordSection #topBar #type').innerHTML = '&nbsp;';

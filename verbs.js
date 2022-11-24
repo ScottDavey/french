@@ -165,6 +165,11 @@ const verbs = [
         group: `Première (ER)`,
     },
     {
+        fr: `Rappeler`,
+        en: `To call, call back`,
+        group: `Première (ER)`,
+    },
+    {
         fr: `Réveiller`,
         en: `To wake (up), to (a)waken`,
         group: `Première (ER)`,
@@ -215,6 +220,11 @@ const verbs = [
         group: `troisième (RE): régulier`,
     },
     {
+        fr: `Connaître`,
+        en: `To know`,
+        group: `troisième (RE): régulier`,
+    },
+    {
         fr: `(se) Détendre`,
         en: `To relax, to become less tense (for example: situation), to become stretched`,
         group: `troisième (RE): régulier`,
@@ -237,6 +247,11 @@ const verbs = [
     {
         fr: `Prendre`,
         en: `to take, grab, catch`,
+        group: `troisième (RE): régulier`,
+    },
+    {
+        fr: `Rendre`,
+        en: `To make, render, give back, restore, hand (in), submit`,
         group: `troisième (RE): régulier`,
     },
     {
