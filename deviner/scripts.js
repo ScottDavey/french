@@ -18,6 +18,12 @@ function next() {
 
     // Clear previous answer
     document.querySelector('#wordSection #userInput #inputField').value = '';
+    // Clear hint flag
+    document.querySelector('#hasUsedHint').value = 0;
+    // Set user score back to normal (if hint was used)
+    const playerGuesses = document.getElementById('playerGuesses');
+    playerGuesses.style.textDecoration = 'none';
+    playerGuesses.style.color = '#222831';
 
     // find a random word and set up the word section:
     //      Because we have two files (verbs and words), we have to get fancy
@@ -53,17 +59,24 @@ function validate() {
     const inputFieldVal = inputFieldEl.value;
     const answer = document.querySelector('#wordSection #userInput #answer').value;
 
-    console.log(inputFieldVal.toLowerCase(), answer.toLowerCase());
-
     if (inputFieldVal.toLowerCase() === answer.toLowerCase()) {
-        const userScoreEl = document.querySelector('#gameScore #playerGuesses');
-        const userScore = +(userScoreEl.textContent || 0);
-        userScoreEl.innerHTML = userScore + 1;
-        // clear error style, if applicable
-        inputFieldEl.style.backgroundColor = '#EEEEEE';
+        const hasUsedHint = +document.querySelector('#hasUsedHint').value;
+        
+        // If the uses a hint, don't add a point
+        if (!hasUsedHint) {
+            const userScoreEl = document.querySelector('#gameScore #playerGuesses');
+            const userScore = +(userScoreEl.textContent || 0);
+            userScoreEl.innerHTML = userScore + 1;
+        }
+        
+        // Show field as green (good!)
+        inputFieldEl.style.backgroundColor = '#24de4c';
 
-        // Next!
-        next();
+        // After a second, set back to normal BG color and get next word
+        window.setTimeout(() => {
+            inputFieldEl.style.backgroundColor = '#EEEEEE';
+            next();
+        }, 500);
     } else {
         // Add red error border
         inputFieldEl.style.backgroundColor = '#E23E57';
@@ -77,6 +90,21 @@ function reset(startButton, hintButton) {
     startButton.style.display = 'inline';
     hintButton.style.display = 'none';
 
+    // Set user score back to normal (if hint was used)
+    const playerGuesses = document.getElementById('playerGuesses');
+    playerGuesses.style.textDecoration = 'none';
+    playerGuesses.style.color = '#222831';
+
+    // Reset hint
+    document.querySelector('#hasUsedHint').value = 0;
+
+    // clear word section
+    document.querySelector('#wordSection #topBar #type').innerHTML = '&nbsp;';
+    document.querySelector('#wordSection #topBar #group').innerHTML = '&nbsp;';
+    document.querySelector('#wordSection #mid #clueText').innerHTML = '&nbsp;';
+    document.querySelector('#wordSection #userInput #answer').value = '&nbsp;';
+    document.querySelector('#wordSection #bottomBar').style.display = 'none';
+
     // Reset Score
     for (const scoreEl of score) {
         scoreEl.innerHTML = '0';
@@ -87,6 +115,13 @@ function hint() {
     const answer = document.querySelector('#wordSection #userInput #answer').value;
     const hintText = document.querySelector('#hintSection #hintText');
 
+    // Set flag to prevent point
+    document.querySelector('#hasUsedHint').value = 1;
+    // Show user score as disabled
+    const playerGuesses = document.getElementById('playerGuesses');
+    playerGuesses.style.color = '#bb9a4d';
+    playerGuesses.style.textDecoration = 'line-through';
+
     // Set hint text to show answer
     hintText.innerHTML = answer;
 
@@ -96,7 +131,7 @@ function hint() {
     // hide after 2 seconds
     window.setTimeout(() => {
         hintText.style.display = 'none';
-    }, 1000);
+    }, 2000);
 }
 
 function addFrenchChar(char) {
