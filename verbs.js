@@ -55,6 +55,11 @@ const verbs = [
         group: `Première (ER)`,
     },
     {
+        fr: `Deviner`,
+        en: `To guess, suppose, estimate`,
+        group: `Première (ER)`,
+    },
+    {
         fr: `Donner`,
         en: `To give`,
         group: `Première (ER)`,

@@ -208,6 +208,7 @@ html, body {
     font-size: 16pt;
     text-align: center;
     border: 1px solid #222831;
+    border-radius: 5px;
     cursor: pointer;
 }
 
