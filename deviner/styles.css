@@ -76,15 +76,44 @@ html, body {
     color: #05dae5;
 }
 
+#wrapper .pageSide.left #totalWordsDiv {
+    width: 100%;
+    padding: 7px 15px;
+    background-color: #F05454;
+    border-left: 10px groove #6c2626;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#wrapper .pageSide.left .scoreSeparator {
+    width: 10%;    
+}
+
 #wrapper .pageSide.left #gameScore {
     width: 100%;
     text-align: center;
     font-size: 75px;
+    display: flex;
+}
+
+#wrapper .pageSide.left #gameScore .scoreComponents {
+    text-align: center;
 }
 
 #wrapper .pageSide.left #gameScore .score {
-    padding: 0px 20px;
+    width: 45%;
 }
+
+#wrapper .pageSide.left #gameScoreDesc {
+    width: 100%;
+    text-align: center;
+    font-size: 16pt;
+    display: flex;
+}
+
+#wrapper .pageSide.left #gameScoreDesc .scoreDesc {
+    width: 45%;
+} 
 
 #wrapper .pageSide.right #wordSection {
     width: 75%;
@@ -129,17 +158,18 @@ html, body {
 }
 
 #wrapper .pageSide.right #wordSection #mid #userInput #inputField {
-    width: 65%;
+    width: 85%;
     padding: 15px;
     background-color: #EEEEEE;
     border: 1px solid #EEEEEE;
     color: #222831;
     font-size: 30pt;
     text-align: center;
+    border-radius: 0px 0px 5px 5px;
 }
 
 #wrapper .pageSide.right #wordSection #mid #clueText {
-    width: 65%;
+    width: 80%;
     margin: 0 auto;
     padding-bottom: 15px;
     font-size: 18pt;

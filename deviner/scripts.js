@@ -30,11 +30,14 @@ function start(startButton, hintButton) {
         );
     }
 
+    // update the Total Words indicator
+    document.querySelector('#totalWordsDiv #totalWords').innerHTML = WORD_LIST.length;
+
     next();
 }
 
 function next() {
-    const totalScoreEl = document.getElementById('totalWords');
+    const totalScoreEl = document.getElementById('totalWordsGuessed');
     const totalScore = +totalScoreEl.textContent;
 
     // Increment the total words count (total score)
@@ -108,7 +111,7 @@ function validate() {
 
 function reset(startButton, hintButton) {
     const score = document.querySelectorAll('.score');
-    
+
     // Reset buttons
     startButton.style.display = 'inline';
     hintButton.style.display = 'none';
@@ -135,6 +138,9 @@ function reset(startButton, hintButton) {
     for (const scoreEl of score) {
         scoreEl.innerHTML = '0';
     }
+
+    // reset word_list
+    WORD_LIST = [];
 }
 
 function hint() {

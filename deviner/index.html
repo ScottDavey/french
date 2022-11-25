@@ -30,10 +30,20 @@
                     <input type="button" id="resetButton" value="RÉINITIALISER" />
                 </section>
 
+                <section class="row">
+                    <div id="totalWordsDiv">TOTAL WORDS: <span id="totalWords">0</span></div>
+                </section>
+
                 <section id="gameScore" class="row">
-                    <span id="playerGuesses" class="score">0</span>
-                    /
-                    <span id="totalWords" class="score">0</span>
+                    <div id="playerGuesses" class="score scoreComponents">0</div>
+                    <div id="scoreSeparator" class="scoreComponents scoreSeparator">/</div>
+                    <div id="totalWordsGuessed" class="score scoreComponents">0</div>
+                </section>
+
+                <section id="gameScoreDesc" class="row">
+                    <div class="scoreDescComponent scoreDesc">réponses <br /> correctes</div>
+                    <div class="scoreDescComponent scoreSeparator">&nbsp;</div>
+                    <div class="scoreDescComponent scoreDesc">mots <br /> devinés</div>
                 </section>
 
             </section>
