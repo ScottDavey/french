@@ -76,13 +76,41 @@ html, body {
     color: #05dae5;
 }
 
-#wrapper .pageSide.left #totalWordsDiv {
+#wrapper .pageSide.left #totalWordStats {
     width: 100%;
-    padding: 7px 15px;
+    display: flex;
+}
+
+#wrapper .pageSide.left #totalWordsDiv {
+    width: 65%;
+    padding: 9px 15px;
     background-color: #F05454;
-    border-left: 10px groove #6c2626;
-    border-radius: 5px;
+    /* border-left: 10px groove #6c2626; */
+    border-right: 4px solid #FFD369;
+    border-radius: 5px 0px 0px 5px;
     box-sizing: border-box;
+}
+
+#wrapper .pageSide.left #statButtonDiv {
+    width: 35%;
+}
+
+#wrapper .pageSide.left #statButtonDiv #statButton {
+    width: 100%;
+    padding: 10px 15px;
+    text-align: right;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 14pt;
+    background-color: #311D3F;
+    color: #E84545;
+    cursor: pointer;
+}
+
+#wrapper .pageSide.left #statButtonDiv #statButton:hover {
+    background-color: #583471;
+    color: #f97575;
 }
 
 #wrapper .pageSide.left .scoreSeparator {
@@ -245,4 +273,70 @@ html, body {
 #wrapper .pageSide.right #altCodes .code:hover {
     background-color: #f8e3b0;
     box-shadow: 0px 0px 5px #564724;
+}
+
+#statsOverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000CC;
+    display: none;
+}
+
+#statsOverlay #statDialog {
+    width: 500px;
+    max-height: 300px;
+    background-color: #FFD369;
+    border-radius: 5px;
+    position: relative;
+    left: 35%;
+    top: 35%;
+    box-shadow: 5px 5px 15px #000000;
+}
+
+#statsOverlay #statDialog #topBar {
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 16pt;
+    background-color: #222831;
+    color: #04e8f4;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#statsOverlay #statDialog #mid p {
+    padding: 3px 0px;
+    margin: 0;
+}
+
+#statsOverlay #statDialog #mid {
+    width: 100%;
+    max-height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #EEEEEE;
+    overflow-y: scroll;
+}
+
+#statsOverlay #statDialog #bottomBar {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#statsOverlay #statDialog #bottomBar #statsClose {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0px 0px 4px 0px;
+    background-color: #6c2626;
+    color: #222831;
+    cursor: pointer;
+}
+
+#statsOverlay #statDialog #bottomBar #statsClose:hover {
+    background-color: #a53939;
+    color: #0e1014;
 }

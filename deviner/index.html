@@ -30,8 +30,11 @@
                     <input type="button" id="resetButton" value="RÉINITIALISER" />
                 </section>
 
-                <section class="row">
+                <section id="totalWordStats" class="row">
                     <div id="totalWordsDiv">TOTAL WORDS: <span id="totalWords">0</span></div>
+                    <div id="statButtonDiv">
+                        <input type="button" id="statButton" value="STATS" />
+                    </div>
                 </section>
 
                 <section id="gameScore" class="row">
@@ -106,6 +109,16 @@
         </div>
 
     </div>
+
+    <section id="statsOverlay">
+        <div id="statDialog">
+            <div id="topBar">STATS!</div>
+            <div id="mid"></div>
+            <div id="bottomBar">
+                <input type="button" id="statsClose" value="FERMER">
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>

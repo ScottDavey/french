@@ -31,12 +31,15 @@ function start(startButton, hintButton) {
     }
 
     // update the Total Words indicator
-    document.querySelector('#totalWordsDiv #totalWords').innerHTML = WORD_LIST.length;
+    document.querySelector('#totalWordsDiv #totalWords').innerHTML = WORD_LIST.length - 1;
 
     next();
 }
 
 function next() {
+
+    // If our WORD_LIST is empty, we're done!
+
     const totalScoreEl = document.getElementById('totalWordsGuessed');
     const totalScore = +totalScoreEl.textContent;
 
@@ -143,6 +146,33 @@ function reset(startButton, hintButton) {
     WORD_LIST = [];
 }
 
+function stats() {
+    const statsOverlay = document.querySelector('#statsOverlay');
+    const statsMid = document.querySelector('#statsOverlay #mid');
+    const playerGuesses = +document.querySelector('#gameScore #playerGuesses').textContent;
+    const totalWordsGuessed = +document.querySelector('#gameScore #totalWordsGuessed').textContent;
+    const totalWordList = +document.querySelector('#totalWords').textContent;
+    const content = `
+        <p>Résponses Correctes: ${playerGuesses | 0}</p>
+        <p>Mots Devinés: ${totalWordsGuessed}</p>
+        <p>Mots Restants: ${totalWordList - totalWordsGuessed}</p>
+        <p>Nombre Total de Mots: ${totalWordList}</p>
+    `;
+
+    // Empty what once was
+    statsMid.innerHTML = '';
+
+    // Replace what is to be
+    statsMid.innerHTML = content;
+
+    // Reveal the truth
+    statsOverlay.style.display = 'block';
+}
+
+function closeStats() {
+    document.querySelector('#statsOverlay').style.display = 'none';
+}
+
 function hint() {
     const answer = document.querySelector('#wordSection #userInput #answer').value;
     const hintText = document.querySelector('#hintSection #hintText');
@@ -163,7 +193,7 @@ function hint() {
     // hide after 2 seconds
     window.setTimeout(() => {
         hintText.style.display = 'none';
-    }, 2000);
+    }, 3000);
 }
 
 function addFrenchChar(char) {
@@ -187,11 +217,15 @@ function main() {
     const resetButton = document.getElementById('resetButton');
     const hintButton = document.getElementById('hintButton');
     const altCodes = document.getElementsByClassName('code');
+    const statButton = document.querySelector('#totalWordStats #statButtonDiv #statButton');
+    const statClostButton = document.querySelector('#statsOverlay #statDialog #bottomBar #statsClose');
 
     startButton.addEventListener('click', () => { start(startButton, nextButton) });
     nextButton.addEventListener('click', next);
     resetButton.addEventListener('click', () => { reset(startButton, nextButton) });
     hintButton.addEventListener('click', hint);
+    statButton.addEventListener('click', stats);
+    statClostButton.addEventListener('click', closeStats);
     
     for (const code of altCodes) {
         code.addEventListener('click', (charEl) => { addFrenchChar(code.textContent.toLowerCase()); });

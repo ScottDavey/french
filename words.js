@@ -285,6 +285,11 @@ const words = [
         gender: `masculin`,
     },
     {
+        fr: `une campagne`,
+        en: `The country, countryside, (alt) campaign`,
+        gender: `féminin`,
+    },
+    {
         fr: `un changement`,
         en: `change`,
         gender: `masculin`,

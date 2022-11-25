@@ -70,6 +70,11 @@ const verbs = [
         group: `Première (ER)`,
     },
     {
+        fr: `Emménager`,
+        en: `To move in, moving-in, move (houses)`,
+        group: `Première (ER)`,
+    },
+    {
         fr: `Envoyer`,
         en: `To send, to ship, to dispatch (for example: merchandise, parcel), to remit (for example: money)`,
         group: `Première (ER)`,
