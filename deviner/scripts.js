@@ -39,6 +39,13 @@ function start(startButton, hintButton) {
 function next() {
 
     // If our WORD_LIST is empty, we're done!
+    if (WORD_LIST.length === 0) {
+        const nextButton = document.querySelector('#nextButton');
+        nextButton.disabled = true;
+        nextButton.classList.add('disabled');
+        stats();
+        return;
+    }
 
     const totalScoreEl = document.getElementById('totalWordsGuessed');
     const totalScore = +totalScoreEl.textContent;
@@ -114,13 +121,16 @@ function validate() {
 
 function reset(startButton, hintButton) {
     const score = document.querySelectorAll('.score');
+    const nextButton = document.querySelector('#nextButton');
+    const playerGuesses = document.getElementById('playerGuesses');
 
     // Reset buttons
     startButton.style.display = 'inline';
     hintButton.style.display = 'none';
+    nextButton.disabled = false;
+    nextButton.classList.remove('disabled');
 
     // Set user score back to normal (if hint was used)
-    const playerGuesses = document.getElementById('playerGuesses');
     playerGuesses.style.textDecoration = 'none';
     playerGuesses.style.color = '#222831';
 
@@ -152,11 +162,28 @@ function stats() {
     const playerGuesses = +document.querySelector('#gameScore #playerGuesses').textContent;
     const totalWordsGuessed = +document.querySelector('#gameScore #totalWordsGuessed').textContent;
     const totalWordList = +document.querySelector('#totalWords').textContent;
+    const totalHintsUsed = +document.querySelector('#totalHintsUsed').value;
     const content = `
-        <p>Résponses Correctes: ${playerGuesses | 0}</p>
-        <p>Mots Devinés: ${totalWordsGuessed}</p>
-        <p>Mots Restants: ${totalWordList - totalWordsGuessed}</p>
-        <p>Nombre Total de Mots: ${totalWordList}</p>
+        <div class="statRow">
+            <p class="icon">✅</p>
+            <p class="statText">Résponses Correctes: ${playerGuesses | 0}</p>
+        </div>
+        <div class="statRow">
+            <p class="icon">❔</p>
+            <p class="statText">Mots Devinés: ${totalWordsGuessed}</p>
+        </div>
+        <div class="statRow">
+            <p class="icon">💡</p>
+            <p class="statText">Indices Utilisées: ${totalHintsUsed}</p>
+        </div>
+        <div class="statRow">
+            <p class="icon">🔎</p>
+            <p class="statText">Mots Restants: ${totalWordList - totalWordsGuessed}</p>
+        </div>
+        <div class="statRow">
+            <p class="icon">📑</p>
+            <p class="statText">Nombre Total de Mots: ${totalWordList}</p>
+        </div>
     `;
 
     // Empty what once was
@@ -176,9 +203,15 @@ function closeStats() {
 function hint() {
     const answer = document.querySelector('#wordSection #userInput #answer').value;
     const hintText = document.querySelector('#hintSection #hintText');
+    const hasUsedHint = document.querySelector('#hasUsedHint');
+    const totalHintsUsedEl = document.querySelector('#totalHintsUsed');
+    const totalHintsUsedVal = +totalHintsUsedEl.value;
 
-    // Set flag to prevent point
-    document.querySelector('#hasUsedHint').value = 1;
+    // If not yet set, set flag to prevent point and increment total hints used
+    if (+hasUsedHint.value !== 1) {
+        hasUsedHint.value = 1;
+        totalHintsUsedEl.value = totalHintsUsedVal + 1;
+    }
     // Show user score as disabled
     const playerGuesses = document.getElementById('playerGuesses');
     playerGuesses.style.color = '#bb9a4d';
